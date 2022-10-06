@@ -1,0 +1,37 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    // "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    // forcing this ignorePattern to allow redux-toolkit createSlice reducers functions
+    // to be called when dispatching sagas with payloads that are not used inside the action itself
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "space-before-function-paren": "off",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/anchor-is-valid": "off"
+  },
+  "globals": {
+    "React": true, // Force tsx components to accept React and JSX at context
+    "JSX": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "ignorePatterns": [
+    "next-env.d.ts"
+  ]
+}
