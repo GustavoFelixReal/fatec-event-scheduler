@@ -11,6 +11,7 @@
     "prettier/prettier": "error",
     // "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "react/no-unknown-property": "off",
     // forcing this ignorePattern to allow redux-toolkit createSlice reducers functions
     // to be called when dispatching sagas with payloads that are not used inside the action itself
     "@typescript-eslint/no-unused-vars": [
