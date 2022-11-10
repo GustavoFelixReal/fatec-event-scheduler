@@ -1,7 +1,12 @@
+import { HeaderSearchInput } from './HeaderSearchInput'
+
+import styles from './Header.module.scss'
+
 export function Header() {
   return (
-    <header>
+    <header data-fes-header className={styles.fesHeader}>
       <div>Logo Aqui</div>
+
       <nav>
         <ul>
           <li>Eventos</li>
@@ -9,6 +14,8 @@ export function Header() {
           <li>Sair</li>
         </ul>
       </nav>
+
+      <HeaderSearchInput />
     </header>
   )
 }

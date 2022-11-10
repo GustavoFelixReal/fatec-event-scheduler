@@ -1,0 +1,32 @@
+.fes-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 5px;
+
+    li {
+      padding: 0 10px;
+    }
+  }
+
+  [data-fes-header-search-input] {
+    background-color: var(--fes-color-gray-20);
+    border-radius: var(--fes-border-radius-pill);
+
+    input, button {
+      background-color: transparent;
+      border: none;
+    }
+
+    input {
+      padding: 20px;
+    }
+  }
+}

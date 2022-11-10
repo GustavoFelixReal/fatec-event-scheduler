@@ -9,7 +9,7 @@ export interface EventShelfProps {
 
 export function EventShelf({ events }: EventShelfProps) {
   return (
-    <section fes-data-event-shelf="true" className={styles.fesEventShelf}>
+    <section data-fes-event-shelf="true" className={styles.fesEventShelf}>
       {events?.map((event) => (
         <EventCard key={event.id} event={event} />
       ))}

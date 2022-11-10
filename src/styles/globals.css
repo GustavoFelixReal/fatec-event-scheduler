@@ -19,8 +19,22 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
-    color: white;
-    background: black;
+    color: var(--fes-color-gray-10);
+    background: var(--fes-color-gray-30);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--fes-color-white);
+  }
+
+  a {
+    color: var(--fes-color-red);
   }
 }
