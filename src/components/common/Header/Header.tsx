@@ -1,5 +1,7 @@
 import { HeaderSearchInput } from './HeaderSearchInput'
 
+import { Text } from 'src/components/ui/Text'
+
 import styles from './Header.module.scss'
 
 export function Header() {
@@ -9,9 +11,15 @@ export function Header() {
 
       <nav>
         <ul>
-          <li>Eventos</li>
-          <li>Usuário</li>
-          <li>Sair</li>
+          <li>
+            <Text>Eventos</Text>
+          </li>
+          <li>
+            <Text>Usuário</Text>
+          </li>
+          <li>
+            <Text>Sair</Text>
+          </li>
         </ul>
       </nav>
 
