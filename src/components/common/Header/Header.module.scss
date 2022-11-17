@@ -16,13 +16,23 @@
     }
   }
 
+  [data-fes-header-link] {
+
+    [data-fes-text] {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
   [data-fes-header-search-input] {
     background-color: var(--fes-color-gray-20);
     border-radius: var(--fes-border-radius-pill);
     display: flex;
     align-items: center;
 
-    input, button {
+    input,
+    button {
       background-color: transparent;
       border: none;
     }
