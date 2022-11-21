@@ -39,12 +39,18 @@ interface EventsProps {
 export const getServerSideProps: GetServerSideProps<EventsProps> = async (
   ctx
 ) => {
-  const apiClient = setupAPIClient(ctx)
-  const response: AxiosResponse<EventsProps> = await apiClient.get('events')
+  let events = []
 
-  return {
-    props: {
-      events: response.data.events
+  try {
+    const apiClient = setupAPIClient(ctx)
+    const response: AxiosResponse<EventsProps> = await apiClient.get('events')
+
+    events = response.data.events
+  } finally {
+    return {
+      props: {
+        events
+      }
     }
   }
 }

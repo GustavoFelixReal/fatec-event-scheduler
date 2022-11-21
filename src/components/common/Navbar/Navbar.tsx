@@ -8,36 +8,34 @@ import {
   HiUser
 } from 'react-icons/hi'
 
-import { HeaderLink } from './HeaderLink'
-import { HeaderSearchInput } from './HeaderSearchInput'
-import styles from './Header.module.scss'
+import { NavbarLink } from './NavbarLink'
+import { NavbarSearchInput } from './NavbarSearchInput'
+import styles from './Navbar.module.scss'
 
-export function Header() {
+export function Navbar() {
   return (
-    <header data-fes-header className={styles.fesHeader}>
-      <div>Logo Aqui</div>
-
+    <header data-fes-navbar className={styles.fesNavbar}>
       <nav>
         <ul>
-          <HeaderLink
+          <NavbarLink
             title="Home"
             href="/"
             icon={<HiOutlineHome size={20} />}
             iconActive={<HiHome size={20} />}
           />
-          <HeaderLink
+          <NavbarLink
             title="Eventos"
             href="/event"
             icon={<HiOutlineTicket size={20} />}
             iconActive={<HiTicket size={20} />}
           />
-          <HeaderLink
+          <NavbarLink
             title="Usuários"
             href="/users"
             icon={<HiOutlineUser size={20} />}
             iconActive={<HiUser size={20} />}
           />
-          <HeaderLink
+          <NavbarLink
             title="Sair"
             href="/users"
             icon={<HiOutlineArrowRight size={20} />}
@@ -46,7 +44,7 @@ export function Header() {
         </ul>
       </nav>
 
-      <HeaderSearchInput />
+      <NavbarSearchInput />
     </header>
   )
 }

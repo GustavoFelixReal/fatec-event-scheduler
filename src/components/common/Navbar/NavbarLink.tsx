@@ -4,24 +4,23 @@ import { ReactNode } from 'react'
 
 import { Text } from 'src/components/ui/Text'
 
-interface HeaderLinkProps {
+interface NavbarLinkProps {
   title: string
   href: string
   icon: ReactNode
   iconActive: ReactNode
 }
 
-export function HeaderLink({ title, href, icon, iconActive }: HeaderLinkProps) {
+export function NavbarLink({ title, href, icon, iconActive }: NavbarLinkProps) {
   const { asPath } = useRouter()
   const isActive = asPath.split('?').shift() === href
 
   return (
-    <li data-fes-header-link>
+    <li>
       <Link href={href} prefetch>
-        <a>
-          <Text>
-            {isActive ? iconActive : icon} {title}
-          </Text>
+        <a data-fes-navbar-link data-fes-navbar-link-active={isActive}>
+          {isActive ? iconActive : icon}
+          <Text>{title}</Text>
         </a>
       </Link>
     </li>

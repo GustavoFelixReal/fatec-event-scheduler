@@ -1,31 +1,52 @@
-.fes-header {
+@import "/src/styles/scaffold.scss";
+
+.fes-navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 20px 30px;
 
-  ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 5px;
+  nav {
+    margin: 0 auto;
 
-    li {
-      padding: 0 10px;
+    ul {
+      display: flex;
+      justify-content: start;
+      list-style: none;
+      gap: 5px;
+
+      li {
+        padding: 0 10px;
+      }
     }
   }
 
-  [data-fes-header-link] {
+  [data-fes-navbar-link] {
+    color: var(--fes-color-gray-10);
+    display: flex;
+    gap: 5px;
+
+    &[data-fes-navbar-link-active="true"] {
+      color: var(--fes-color-red);
+
+      @include media("<tablet") {
+        box-shadow: var(--fes-color-red) 0px 0px 20px 9px;
+      }
+    }
 
     [data-fes-text] {
       display: flex;
       align-items: center;
       gap: 5px;
+
+      @include media("<tablet") {
+        display: none;
+      }
     }
   }
 
-  [data-fes-header-search-input] {
+  [data-fes-navbar-search-input] {
     background-color: var(--fes-color-gray-20);
     border-radius: var(--fes-border-radius-pill);
     display: flex;
