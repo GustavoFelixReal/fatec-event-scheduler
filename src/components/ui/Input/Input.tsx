@@ -2,8 +2,17 @@ import type { HTMLProps } from 'react'
 
 import styles from './Input.module.scss'
 
-type InputProps = HTMLProps<HTMLInputElement>
+interface InputProps extends HTMLProps<HTMLInputElement> {
+  error?: boolean
+}
 
-export function Input({ ...props }: InputProps) {
-  return <input data-fes-input className={styles.fesInput} {...props} />
+export function Input({ error, ...props }: InputProps) {
+  return (
+    <input
+      data-fes-input
+      data-fes-input-error={error}
+      className={styles.fesInput}
+      {...props}
+    />
+  )
 }
