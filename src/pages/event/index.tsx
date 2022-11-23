@@ -1,7 +1,11 @@
 import { AxiosResponse } from 'axios'
 import { GetServerSideProps, NextPage } from 'next'
+import Head from 'next/head'
+import { Container } from 'src/components/common/Container'
 import { EventShelf } from 'src/components/events/EventShelf'
+import { Text } from 'src/components/ui/Text'
 import { setupAPIClient } from 'src/services/api'
+import { eventFormatter } from 'src/services/formatters'
 
 type Image = {
   id: number
@@ -25,11 +29,13 @@ export type Event = {
   location: string
   isInternal: boolean
   isPublic: boolean
+  startDate: string
+  endDate?: string
   status: string
   createdAt: string
   updatedAt: string
-  images: Image[]
-  relatedLinks: Link[]
+  images?: Image[]
+  relatedLinks?: Link[]
 }
 
 interface EventsProps {
@@ -49,7 +55,7 @@ export const getServerSideProps: GetServerSideProps<EventsProps> = async (
   } finally {
     return {
       props: {
-        events
+        events: events.map((event) => eventFormatter(event))
       }
     }
   }
@@ -57,9 +63,18 @@ export const getServerSideProps: GetServerSideProps<EventsProps> = async (
 
 const Events: NextPage<EventsProps> = ({ events = [] }) => {
   return (
-    <main>
+    <Container>
+      <Head>
+        <title>Home</title>
+        <meta name="description" content="Eventos da Fatec ZL" />
+      </Head>
+
+      <Text as="h1" variant="heading-1">
+        Upcoming Events
+      </Text>
+
       <EventShelf events={events} />
-    </main>
+    </Container>
   )
 }
 

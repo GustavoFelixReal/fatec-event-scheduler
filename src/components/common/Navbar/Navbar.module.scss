@@ -7,31 +7,57 @@
   justify-content: space-between;
   padding: 20px 30px;
 
+  @include media("<tablet") {
+   justify-content: center;
+
+  }
+
   nav {
     margin: 0 auto;
 
     ul {
       display: flex;
-      justify-content: start;
+      justify-content: flex-start;
       list-style: none;
+      padding: 0;
       gap: 5px;
 
       li {
         padding: 0 10px;
       }
+
+      @include media("<tablet") {
+        justify-content: center;
+      }
+    }
+
+    @include media("<tablet") {
+      background-color: var(--fes-color-gray-20);
+      bottom: 0;
+      position: absolute;
+      width: 100%;
     }
   }
 
   [data-fes-navbar-link] {
     color: var(--fes-color-gray-10);
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 5px;
 
     &[data-fes-navbar-link-active="true"] {
       color: var(--fes-color-red);
 
       @include media("<tablet") {
-        box-shadow: var(--fes-color-red) 0px 0px 20px 9px;
+        // box-shadow: var(--fes-color-red) 0px 0px 20px 9px;
+      }
+
+      &::after {
+        content: "";
+        background-color: var(--fes-color-red);
+        height: 1px;
+        width: 95%;
       }
     }
 

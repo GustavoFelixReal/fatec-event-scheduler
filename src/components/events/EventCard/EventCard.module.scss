@@ -1,3 +1,30 @@
+@import "/src/styles/scaffold.scss";
+
 .fes-event-card {
-  
+  align-items: center;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  position: relative;
+  width: 85%;
+
+  img {
+    filter: brightness(60%);
+  }
+
+  [data-fes-event-card-info] {
+    color: var(--fes-color-white);
+    bottom: 0;
+    left: 0;
+    margin: .5rem;
+    position: absolute;
+
+    h2 {
+      margin-top: 0;
+
+      @include truncate-title(1);
+    }
+  }
 }

@@ -9,14 +9,27 @@ export interface EventCardProps {
 }
 
 export const EventCard = memo(function EventCard({ event }: EventCardProps) {
+  const [featuredImage] = event.images
+
   return (
     <article data-fes-event-card="true" className={styles.fesEventCard}>
-      <Text as="h2" variant="heading-2">
-        {event.title}
-      </Text>
-      <Text as="p" variant="paragraph">
-        {event.description}
-      </Text>
+      <img src={featuredImage?.src} alt={featuredImage?.description} />
+
+      <section data-fes-event-card-info>
+        <Text as="span" variant="caption-g">
+          {event.startDate}
+        </Text>
+
+        {!!event.endDate && (
+          <Text as="span" variant="caption-g">
+            - {event.endDate}
+          </Text>
+        )}
+
+        <Text as="h2" variant="heading-3">
+          {event.title}
+        </Text>
+      </section>
     </article>
   )
 })
