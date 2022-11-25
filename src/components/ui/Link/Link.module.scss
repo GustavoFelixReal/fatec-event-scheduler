@@ -1,0 +1,11 @@
+.fes-link {
+  &[data-fes-link-variant="default"] {
+    color: var(--fes-color-purple);
+    text-decoration: none;
+  }
+
+  &[data-fes-link-variant="underlined"] {
+    color: var(--fes-color-purple);
+    text-decoration: underline;
+  }
+}
