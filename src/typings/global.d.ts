@@ -73,3 +73,15 @@ C extends React.ElementType,
 Props = {}
 >
 = PolymorphicComponentProps<C, Props> & { ref?: PolymorphicRef<C> }
+
+type User = {
+  id: number
+  name: string
+  username: string
+  email: string
+  isAdmin: boolean
+  isBlocked: boolean
+  isDeleted: boolean
+  createdAt: string
+  updatedAt: string
+}

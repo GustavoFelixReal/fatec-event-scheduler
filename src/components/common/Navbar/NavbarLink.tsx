@@ -17,7 +17,7 @@ export function NavbarLink({ title, href, icon, iconActive }: NavbarLinkProps) {
 
   return (
     <li>
-      <Link href={href} prefetch>
+      <Link href={href}>
         <a data-fes-navbar-link data-fes-navbar-link-active={isActive}>
           {isActive ? iconActive : icon}
           <Text>{title}</Text>

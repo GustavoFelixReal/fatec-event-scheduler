@@ -1,9 +1,11 @@
 import { AxiosResponse } from 'axios'
-import { GetServerSideProps, NextPage } from 'next'
+import { NextPage } from 'next'
 import Head from 'next/head'
+
 import { Container } from 'src/components/common/Container'
 import { EventShelf } from 'src/components/events/EventShelf'
 import { Text } from 'src/components/ui/Text'
+import { withSSRAuth } from 'src/sdk/auth/withSSRAuth'
 import { setupAPIClient } from 'src/services/api'
 import { eventFormatter } from 'src/services/formatters'
 
@@ -42,30 +44,26 @@ interface EventsProps {
   events: Event[]
 }
 
-export const getServerSideProps: GetServerSideProps<EventsProps> = async (
-  ctx
-) => {
+export const getServerSideProps = withSSRAuth<EventsProps>(async (ctx) => {
   let events = []
 
-  try {
-    const apiClient = setupAPIClient(ctx)
-    const response: AxiosResponse<EventsProps> = await apiClient.get('events')
+  const apiClient = setupAPIClient(ctx)
+  const response: AxiosResponse<EventsProps> = await apiClient.get('events')
 
-    events = response.data.events
-  } finally {
-    return {
-      props: {
-        events: events.map((event) => eventFormatter(event))
-      }
+  events = response.data.events
+
+  return {
+    props: {
+      events: events.map((event) => eventFormatter(event))
     }
   }
-}
+})
 
 const Events: NextPage<EventsProps> = ({ events = [] }) => {
   return (
     <Container>
       <Head>
-        <title>Home</title>
+        <title>Eventos</title>
         <meta name="description" content="Eventos da Fatec ZL" />
       </Head>
 

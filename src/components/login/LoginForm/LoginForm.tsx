@@ -10,21 +10,27 @@ import { Text } from 'src/components/ui/Text'
 import styles from './LoginForm.module.scss'
 import { loginFormValidator } from './LoginForm.validation'
 import { Error } from 'src/components/ui/Error'
+import { useAuth } from 'src/sdk/auth/AuthContext'
 type LoginFormValues = {
   email: string
   password: string
 }
 
 export function LoginForm() {
+  const { signIn } = useAuth()
+
   const {
     handleSubmit,
     register,
     formState: { errors }
   } = useForm<LoginFormValues>({ resolver: yupResolver(loginFormValidator) })
 
-  const onSubmit = useCallback((values: LoginFormValues) => {
-    console.log(values)
-  }, [])
+  const onSubmit = useCallback(
+    (values: LoginFormValues) => {
+      signIn(values)
+    },
+    [signIn]
+  )
 
   return (
     <form
@@ -75,10 +81,7 @@ export function LoginForm() {
         variant="subheading-1/button-text"
         data-fes-create-account-link
       >
-        Não tem uma conta?{' '}
-        <Link href="/register" prefetch>
-          registre-se
-        </Link>
+        Não tem uma conta? <Link href="/register">registre-se</Link>
       </Text>
     </form>
   )
