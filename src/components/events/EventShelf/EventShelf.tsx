@@ -1,3 +1,4 @@
+import Carousel from 'src/components/ui/Carousel'
 import { Event } from 'src/pages/event'
 import { EventCard } from '../EventCard'
 
@@ -10,9 +11,18 @@ export interface EventShelfProps {
 export function EventShelf({ events }: EventShelfProps) {
   return (
     <section data-fes-event-shelf="true" className={styles.fesEventShelf}>
-      {events?.map((event) => (
-        <EventCard key={event.id} event={event} />
-      ))}
+      <Carousel
+        align="center"
+        inViewThreshold={1}
+        skipSnaps={false}
+        draggable
+        scrollDots
+        slidesToScroll={1}
+      >
+        {events?.map((event) => (
+          <EventCard key={event.id} event={event} />
+        ))}
+      </Carousel>
     </section>
   )
 }

@@ -32,10 +32,10 @@ export function withSSRAuth<P>(
     if (options) {
       const { isAdmin } = options
 
-      if (isAdmin) {
+      if (!isAdmin) {
         return {
           redirect: {
-            destination: '/dashboard',
+            destination: '/',
             permanent: false
           }
         }
@@ -47,7 +47,6 @@ export function withSSRAuth<P>(
     } catch (err) {
       if (err instanceof AuthTokenError) {
         destroyCookie(ctx, 'fes.token')
-        destroyCookie(ctx, 'fes.usr')
 
         return {
           redirect: {

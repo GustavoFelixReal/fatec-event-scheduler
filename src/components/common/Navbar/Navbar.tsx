@@ -4,17 +4,30 @@ import {
   HiOutlineHome,
   HiOutlineTicket,
   HiOutlineUser,
+  HiOutlineUserGroup,
   HiTicket,
-  HiUser
+  HiUser,
+  HiUserGroup
 } from 'react-icons/hi'
 
 import { NavbarLink } from './NavbarLink'
 import { NavbarSearchInput } from './NavbarSearchInput'
 import styles from './Navbar.module.scss'
+import { useAuth } from 'src/sdk/auth/AuthContext'
 
-export function Navbar() {
+interface NavbarProps {
+  search?: boolean
+}
+
+export function Navbar({ search = true }: NavbarProps) {
+  const { user } = useAuth()
+
   return (
-    <header data-fes-navbar className={styles.fesNavbar}>
+    <header
+      data-fes-navbar
+      data-fes-navbar-search={search}
+      className={styles.fesNavbar}
+    >
       <nav>
         <ul>
           <NavbarLink
@@ -32,19 +45,25 @@ export function Navbar() {
           <NavbarLink
             title="Usuários"
             href="/users"
+            icon={<HiOutlineUserGroup size={20} />}
+            iconActive={<HiUserGroup size={20} />}
+          />
+          <NavbarLink
+            title={user?.name || 'Eu'}
+            href="/me"
             icon={<HiOutlineUser size={20} />}
             iconActive={<HiUser size={20} />}
           />
           <NavbarLink
             title="Sair"
-            href="/users"
+            href="/logout"
             icon={<HiOutlineArrowRight size={20} />}
             iconActive={<HiOutlineArrowRight size={20} />}
           />
         </ul>
       </nav>
 
-      <NavbarSearchInput />
+      {search && <NavbarSearchInput />}
     </header>
   )
 }

@@ -1,0 +1,12 @@
+.fes-back {
+  background-color: var(--fes-color-gray-20);
+  padding: .5rem;
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+
+  [data-fes-text] {
+    display: flex;
+    align-items: center;
+  }
+}

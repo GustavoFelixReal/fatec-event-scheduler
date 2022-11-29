@@ -3,16 +3,20 @@
 .fes-event-card {
   align-items: center;
   border-radius: 25px;
+  background-color: var(--fes-color-black);
+  cursor: grab;
   display: flex;
   justify-content: center;
   overflow: hidden;
-
   position: relative;
-  width: 85%;
-  max-width: 350px;
+  min-width: 85%;
+  height: 50vh;
 
   img {
     filter: brightness(60%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   [data-fes-event-card-info] {

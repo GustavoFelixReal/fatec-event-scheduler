@@ -1,4 +1,14 @@
+@import "/src/styles/scaffold.scss";
+
 .fes-container {
   margin: 1.5rem;
-  
+
+  @include media("<tablet") {
+    margin-bottom: 82px;
+  }
+
+  @include media(">=notebook") {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
 }

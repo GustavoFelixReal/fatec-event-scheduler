@@ -20,6 +20,8 @@
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",
     "axios": "^1.2.0",
+    "embla-carousel-autoplay": "^7.0.5",
+    "embla-carousel-react": "^7.0.5",
     "include-media": "^1.4.10",
     "next": "12.2.5",
     "nookies": "^2.5.2",

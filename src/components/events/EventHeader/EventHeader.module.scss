@@ -1,0 +1,43 @@
+@import "/src/styles/scaffold.scss";
+
+.fes-event-header {
+  [data-fes-icon] {
+    color: var(--fes-color-red);
+  }
+
+  @include media("<tablet") {
+    [data-fes-carousel] {
+      position: relative;
+      margin: -1.5rem;
+
+      [data-fes-carousel-slider] {
+        margin: 0;
+        gap: 0;
+        padding: 0;
+
+        [data-fes-carousel-item] {
+          display: flex;
+          justify-content: center;
+          list-style: none;
+          min-width: 100%;
+          max-width: 100%;
+
+          img {
+            width: 100%;
+            min-height: 350px;
+            object-fit: cover;
+          }
+        }
+      }
+
+      &::after {
+        content: "";
+        background: linear-gradient(to top, rgba(30,38,48,1) 25%, rgba(0,212,255,0) 100%);
+        height: 15rem;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+}

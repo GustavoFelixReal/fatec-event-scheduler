@@ -8,7 +8,10 @@ import { AuthProvider } from 'src/sdk/auth/AuthContext'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider>
-      <Layout>
+      <Layout
+        search={pageProps?.search as boolean}
+        back={pageProps?.back as boolean}
+      >
         <Component {...pageProps} />
       </Layout>
     </AuthProvider>

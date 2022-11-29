@@ -1,14 +1,44 @@
 .fes-button {
   border: none;
   border-radius: 25px;
-  padding: 1rem;
 
-
+  // Variants
   &[data-fes-button-variant="primary"] {
     background-color: var(--fes-color-purple);
   }
 
+  &[data-fes-button-variant="secondary"] {
+    background-color: var(--fes-color-gray-20);
+  }
+
+  &[data-fes-button-variant="transparent"] {
+    background-color: transparent;
+    border: none;
+  }
+
+  // Block
   &[data-fes-button-block="true"] {
     width: 100%;
+  }
+
+  // Rounded
+  &[data-fs-button-rounded="smooth"] {
+    border-radius: 5px;
+  }
+
+  &[data-fs-button-rounded="pill"] {
+    border-radius: 100px;
+  }
+
+  &[data-fs-button-size="small"] {
+    padding: 16px 13px;
+  }
+
+  &[data-fs-button-size="regular"] {
+    padding: 1rem;
+  }
+
+  &[data-fs-button-size="large"] {
+    padding: 22px 80px;
   }
 }
