@@ -19,19 +19,21 @@ export interface EventHeaderProps {
 export function EventHeader({ event }: EventHeaderProps) {
   return (
     <header data-fes-event-header className={styles.fesEventHeader}>
-      <Carousel
-        align="center"
-        slidesToScroll={1}
-        inViewThreshold={1}
-        scrollDots={false}
-        loop
-      >
-        {event.images?.map((image) => (
-          <CarouselItem key={image.id}>
-            <img src={image.src} alt={image.description} />
-          </CarouselItem>
-        ))}
-      </Carousel>
+      {event.images?.length > 0 && (
+        <Carousel
+          align="center"
+          slidesToScroll={1}
+          inViewThreshold={1}
+          scrollDots={false}
+          loop
+        >
+          {event.images?.map((image) => (
+            <CarouselItem key={image.id}>
+              <img src={image.src} alt={image.description} />
+            </CarouselItem>
+          ))}
+        </Carousel>
+      )}
 
       <Text as="h1" variant="heading-1">
         {event.title}

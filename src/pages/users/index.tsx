@@ -2,6 +2,7 @@ import { AxiosResponse } from 'axios'
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import { Container } from 'src/components/common/Container'
+import { UsersTable } from 'src/components/user/UsersTable/UsersTable'
 import { withSSRAuth } from 'src/sdk/auth/withSSRAuth'
 import { setupAPIClient } from 'src/services/api'
 
@@ -33,24 +34,7 @@ const UsersReport: NextPage = ({ users }: UsersProps) => {
         <title>Usuários</title>
       </Head>
 
-      <table>
-        <thead>
-          <th>Nome</th>
-          <th>Nome de usuário</th>
-          <th>E-mail</th>
-          <th>Administrador</th>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
-              <td>{user.name}</td>
-              <td>{user.username}</td>
-              <td>{user.email}</td>
-              <td>{user.isAdmin ? 'Sim' : 'Não'}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <UsersTable users={users} />
     </Container>
   )
 }

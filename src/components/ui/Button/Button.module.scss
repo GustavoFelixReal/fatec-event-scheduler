@@ -1,10 +1,21 @@
 .fes-button {
   border: none;
-  border-radius: 25px;
+
+  [data-fes-text] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px
+  }
+
+  &:hover {
+    filter: brightness(.9);
+    transition: .3s all ease;
+  }
 
   // Variants
   &[data-fes-button-variant="primary"] {
-    background-color: var(--fes-color-purple);
+    background-color: var(--fes-color-red);
   }
 
   &[data-fes-button-variant="secondary"] {
@@ -22,23 +33,23 @@
   }
 
   // Rounded
-  &[data-fs-button-rounded="smooth"] {
+  &[data-fes-button-rounded="smooth"] {
     border-radius: 5px;
   }
 
-  &[data-fs-button-rounded="pill"] {
+  &[data-fes-button-rounded="pill"] {
     border-radius: 100px;
   }
 
-  &[data-fs-button-size="small"] {
-    padding: 16px 13px;
+  &[data-fes-button-size="small"] {
+    padding: 12px 10px;
   }
 
-  &[data-fs-button-size="regular"] {
+  &[data-fes-button-size="regular"] {
     padding: 1rem;
   }
 
-  &[data-fs-button-size="large"] {
+  &[data-fes-button-size="large"] {
     padding: 22px 80px;
   }
 }

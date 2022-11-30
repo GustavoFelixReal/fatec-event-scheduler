@@ -1,0 +1,1 @@
+export { EventContact } from './EventContact'

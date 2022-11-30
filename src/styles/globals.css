@@ -39,4 +39,15 @@ a {
   button {
     cursor: pointer;
   }
+
+  .toast-background {
+    background-color: var(--fes-color-gray-20);
+    color: var(--fes-color-gray-10);
+  }
+
+  #nprogress .bar {
+    background-color: var(--fes-color-red) !important;
+    height: 3px !important;
+    z-index: 999999;
+  }
 }

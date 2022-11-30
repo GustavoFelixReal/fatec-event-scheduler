@@ -1,0 +1,15 @@
+.fes-table {
+  border: 1px solid var(--fes-color-gray-10);
+  text-align: center;
+  width: 100%;
+  
+  thead > tr {
+    background-color: var(--fes-color-gray-20);
+    border-bottom: 1px solid var(--fes-color-gray-10);
+  }
+
+  td {
+    padding: .5rem;
+  }
+
+}

@@ -1,7 +1,5 @@
 import {
-  HiHome,
   HiOutlineArrowRight,
-  HiOutlineHome,
   HiOutlineTicket,
   HiOutlineUser,
   HiOutlineUserGroup,
@@ -19,7 +17,7 @@ interface NavbarProps {
   search?: boolean
 }
 
-export function Navbar({ search = true }: NavbarProps) {
+export function Navbar({ search = false }: NavbarProps) {
   const { user } = useAuth()
 
   return (
@@ -30,12 +28,12 @@ export function Navbar({ search = true }: NavbarProps) {
     >
       <nav>
         <ul>
-          <NavbarLink
+          {/* <NavbarLink
             title="Home"
             href="/"
             icon={<HiOutlineHome size={20} />}
             iconActive={<HiHome size={20} />}
-          />
+          /> */}
           <NavbarLink
             title="Eventos"
             href="/event"
@@ -50,7 +48,7 @@ export function Navbar({ search = true }: NavbarProps) {
           />
           <NavbarLink
             title={user?.name || 'Eu'}
-            href="/me"
+            href="#"
             icon={<HiOutlineUser size={20} />}
             iconActive={<HiUser size={20} />}
           />

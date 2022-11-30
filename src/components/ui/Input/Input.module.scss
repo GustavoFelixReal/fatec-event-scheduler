@@ -8,11 +8,11 @@
   width: 100%;
 
   &:hover {
-    box-shadow: 0 0 0 1px var(--fes-color-purple);
+    box-shadow: 0 0 0 1px var(--fes-color-gray-10);
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px var(--fes-color-purple);
+    box-shadow: 0 0 0 2px var(--fes-color-gray-10);
     
     outline: none;
   }

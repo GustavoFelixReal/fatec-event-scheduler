@@ -1,0 +1,19 @@
+.fes-event-item {
+  background-color: var(--fes-color-gray-20);
+  border: 1px solid var(--fes-color-gray-10);
+  border-radius: 5px;
+  color: var(--fes-color-white);
+  cursor: pointer;
+  display: flex;
+  gap: 5px;
+  padding: 1.5rem;
+  margin: 0;
+
+  [data-fes-text] {
+    margin: 0;
+  }
+
+  &:hover {
+    filter: brightness(.9);
+  }
+}

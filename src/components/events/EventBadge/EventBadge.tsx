@@ -12,14 +12,14 @@ const BadgePropsByStatus = {
     variant: 'yellow' as Variant
   },
   APPROVED: {
-    title: 'Aprovado',
+    title: 'Ativo',
     variant: 'green' as Variant
   },
   REJECTED: {
     title: 'Rejeitado',
     variant: 'salmon' as Variant
   },
-  CANCELED: {
+  CANCELLED: {
     title: 'Cancelado',
     variant: 'red' as Variant
   }
@@ -30,7 +30,7 @@ export function EventBadge({ status }: EventBadgeProps) {
 
   return (
     <Badge {...badgeProps}>
-      <Text as="span" variant="paragraph-bold">
+      <Text as="span" variant="caption-g" bold>
         {badgeProps.title}
       </Text>
     </Badge>

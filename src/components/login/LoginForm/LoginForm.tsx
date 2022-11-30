@@ -45,13 +45,7 @@ export function LoginForm() {
         <Input
           type="email"
           error={!!errors?.email?.message}
-          {...register('email', {
-            required: 'Required',
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: 'E-mail inválido'
-            }
-          })}
+          {...register('email')}
         />
         {errors?.email?.message && <Error>{errors?.email?.message}</Error>}
       </div>
@@ -63,9 +57,7 @@ export function LoginForm() {
         <Input
           type="password"
           error={!!errors?.password?.message}
-          {...register('password', {
-            required: 'Required'
-          })}
+          {...register('password')}
         />
         {errors?.password?.message && (
           <Error>{errors?.password?.message}</Error>

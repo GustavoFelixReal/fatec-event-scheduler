@@ -137,4 +137,16 @@
     line-height: var(--fes-text-line-height-sm);
     letter-spacing: var(--fes-text-letter-spacing-2);
   }
+
+  &[data-fes-text-uppercased="true"] {
+    text-transform: uppercase;
+  }
+
+  &[data-fes-text-spaced="true"] {
+    letter-spacing: var(--fes-text-letter-spacing-3);
+  }
+
+  &[data-fes-text-bold="true"] {
+    font-weight: var(--fes-text-font-weight-xt-bold);
+  }
 }
