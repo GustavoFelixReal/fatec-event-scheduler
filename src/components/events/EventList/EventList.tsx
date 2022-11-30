@@ -1,4 +1,5 @@
 import { Link } from 'src/components/ui/Link'
+import { Text } from 'src/components/ui/Text'
 import { Event } from 'src/pages/event'
 import { EventItem } from '../EventItem'
 
@@ -9,15 +10,23 @@ interface EventListProps {
 }
 
 export function EventList({ events }: EventListProps) {
+  if (events.length > 0) {
+    return (
+      <ul data-fes-event-list className={styles.fesEventList}>
+        {events.map((event) => (
+          <li key={event.id}>
+            <Link href={`/event/${event.id}`}>
+              <EventItem event={event} />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
   return (
-    <ul data-fes-event-list className={styles.fesEventList}>
-      {events.map((event) => (
-        <li key={event.id}>
-          <Link href={`/event/${event.id}`}>
-            <EventItem event={event} />
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <Text as="p" variant="paragraph">
+      Não há eventos para exibir
+    </Text>
   )
 }

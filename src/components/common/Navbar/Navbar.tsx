@@ -18,7 +18,7 @@ interface NavbarProps {
 }
 
 export function Navbar({ search = false }: NavbarProps) {
-  const { user } = useAuth()
+  // const { user } = useAuth()
 
   return (
     <header
@@ -40,7 +40,7 @@ export function Navbar({ search = false }: NavbarProps) {
             icon={<HiOutlineTicket size={20} />}
             iconActive={<HiTicket size={20} />}
           />
-          <NavbarLink
+          {/* <NavbarLink
             title="Usuários"
             href="/users"
             icon={<HiOutlineUserGroup size={20} />}
@@ -51,7 +51,7 @@ export function Navbar({ search = false }: NavbarProps) {
             href="#"
             icon={<HiOutlineUser size={20} />}
             iconActive={<HiUser size={20} />}
-          />
+          /> */}
           <NavbarLink
             title="Sair"
             href="/logout"
