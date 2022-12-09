@@ -1,0 +1,59 @@
+.fes-badge {
+  border-radius: 5px;
+  padding: .2rem;
+  display: flex;
+  align-content: center;
+  width: max-content;
+  
+  [data-fes-text] {
+    margin: 0;
+  }
+
+  // Variant
+  &[data-fes-badge-variant="primary"] {
+    background-color: var(--fes-color-gray-20);
+    color: var(--fes-color-gray-10);
+  }
+
+  &[data-fes-badge-variant="secondary"] {
+    background-color: var(--fes-color-gray-10);
+    color: var(--fes-color-gray-20);
+  }
+
+  &[data-fes-badge-variant="red"] {
+    background-color: var(--fes-color-red);
+    color: var(--fes-color-white);
+  }
+
+  &[data-fes-badge-variant="purple"] {
+    background-color: var(--fes-color-purple);
+    color: var(--fes-color-white);
+  }
+
+  &[data-fes-badge-variant="salmon"] {
+    background-color: var(--fes-color-salmon);
+    color: var(--fes-color-white);
+  }
+  
+  &[data-fes-badge-variant="magenta"] {
+    background-color: var(--fes-color-magenta);
+    color: var(--fes-color-white);
+  }
+  
+  &[data-fes-badge-variant="green"] {
+    background-color: var(--fes-color-green);
+    color: var(--fes-color-black);
+  }
+  
+  &[data-fes-badge-variant="yellow"] {
+    background-color: var(--fes-color-yellow);
+    color: var(--fes-color-black);
+  }
+
+  // Hover
+  &[data-fes-hover="true"] {
+    &:hover {
+      filter: brightness(.9);
+    }
+  }
+}

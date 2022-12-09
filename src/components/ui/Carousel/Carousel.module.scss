@@ -1,0 +1,90 @@
+@import "src/styles/scaffold";
+
+.fes-carousel {
+  overflow: hidden;
+
+  [data-fes-carousel-slider] {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+
+    [data-fes-carousel-item] {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  [data-fes-carousel-scroll-dots] {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    padding: 10px 0;
+    list-style: none;
+
+    [data-fes-carousel-scroll-dot] {
+      width: 24px;
+      height: 5px;
+      margin: 0 -2px;
+      background-color: var(--fes-color-gray-20);
+      border-radius: 4px;
+      opacity: 1;
+
+      &[data-fes-carousel-scroll-dot-selected="true"] {
+        background-color: var(--fes-color-red);
+        transition: 0.3s background-color ease;
+      }
+    }
+
+    @include media("<tabletlarge") {
+      gap: 0;
+
+      [data-fes-carousel-scroll-dot] {
+        border-radius: 0;
+      }
+
+      li {
+        &:first-of-type {
+          [data-fes-carousel-scroll-dot] {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+        }
+
+        &:last-of-type {
+          [data-fes-carousel-scroll-dot] {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  [data-fes-carousel-arrow-prev],
+  [data-fes-carousel-arrow-next] {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    svg {
+      background-color: var(--fes-carousel-arrows-bkg-color);
+      border: var(--fes-carousel-arrows-border);
+      border-radius: var(--fes-carousel-arrows-border-radius);
+    }
+  }
+
+  [data-fes-carousel-arrow-prev] {
+    left: 0;
+  }
+
+  [data-fes-carousel-arrow-next] {
+    right: 0;
+  }
+}

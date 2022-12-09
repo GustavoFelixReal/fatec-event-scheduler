@@ -1,3 +1,47 @@
 body {
+  // PALLETTE
+  // Main colors
+  --fes-color-gray-10: #a1a6ac;
+  --fes-color-gray-20: #303b49;
+  --fes-color-gray-30: #1E2630;
+  --fes-color-red: #C72D1C;
+  --fes-color-black: #121212;
+  --fes-color-white: #ffffff;
 
+  // Support colors
+  --fes-color-salmon: #FA564D;
+  --fes-color-yellow: #EFFA5A;
+  --fes-color-magenta: #FA40DA;
+  --fes-color-green: #28FA77;
+  --fes-color-purple: #A034FA;
+
+  // FONT
+  // Family
+  --fes-font-family: 'Inter', sans-serif;
+
+  // Weight
+  --fes-font-extra-light: 200;
+  --fes-font-light: 300;
+  --fes-font-normal: 400;
+  --fes-font-semibold: 600;
+  --fes-font-bold: 700
+
+  // Line Height
+  --fes-font-line-height-xl: 36px;
+  --fes-font-line-height-lg: 26px;
+  --fes-font-line-height-md: 24px;
+  --fes-font-line-height-sm: 22px;
+  --fes-font-line-height-xs: 20px;
+
+  // Letter spacing
+  --fes-font-letter-spacing-1: -0.02rem;
+  --fes-font-letter-spacing-2: 0.05rem;
+  --fes-font-letter-spacing-3: 0.123rem;
+
+  // BORDERS
+  --fes-border-radius-small             : .125rem; // 2px
+  --fes-border-radius                   : .25rem;  // 4px
+  --fes-border-radius-medium            : .5rem;   // 8px
+  --fes-border-radius-pill              : 100px;
+  --fes-border-radius-circle            : 100%;
 }

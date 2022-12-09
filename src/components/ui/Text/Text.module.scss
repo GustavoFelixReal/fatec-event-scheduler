@@ -1,0 +1,152 @@
+@import "src/styles/scaffold";
+
+.fes-text {
+  // --------------------------------------------------------
+  // Design Tokens for Text
+  // --------------------------------------------------------
+
+  // Font families
+  --fes-text-font-family-mainset: 'Inter', sans-serif;
+
+  // Font weights
+  --fes-text-font-weight-ut-bold: 700;
+  --fes-text-font-weight-xt-bold: 650;
+  --fes-text-font-weight-dark: 500;
+  --fes-text-font-weight-regular: 400;
+  --fes-text-font-weigth-book: 350;
+
+  // Font sizes
+  --fes-text-font-size-xxl: 30px;
+  --fes-text-font-size-xxl-mo: 24px;
+  --fes-text-font-size-xl: 20px;
+  --fes-text-font-size-lg: 16px;
+  --fes-text-font-size-md: 14px;
+  --fes-text-font-size-rg: 13px;
+  --fes-text-font-size-sm: 12px;
+  --fes-text-font-size-xs: 11px;
+  --fes-text-font-size-xxs: 10px;
+
+  // Line height
+  --fes-text-line-height-xl: 36px;
+  --fes-text-line-height-lg: 26px;
+  --fes-text-line-height-md: 24px;
+  --fes-text-line-height-sm: 22px;
+  --fes-text-line-height-xs: 20px;
+
+  // Letter spacing
+  --fes-text-letter-spacing-1: -0.02rem;
+  --fes-text-letter-spacing-2: 0.05rem;
+  --fes-text-letter-spacing-3: 0.123rem;
+
+  // --------------------------------------------------------
+  // Variants Styles
+  // --------------------------------------------------------
+
+  &[data-fes-text-variant="heading-1"] {
+    font-family: var(--fes-text-font-family-mainset);
+    font-size: var(--fes-text-font-size-xxl);
+    font-weight: var(--fes-text-font-weight-ut-bold);
+    line-height: var(--fes-text-line-height-xl);
+    letter-spacing: var(--fes-text-letter-spacing-1);
+
+    @include media("<notebook") {
+      font-size: var(--fes-text-font-size-xxl-mo);
+    }
+  }
+
+  &[data-fes-text-variant="heading-2"] {
+    font-family: var(--fes-text-font-family-mainset);
+    font-size: var(--fes-text-font-size-xxl);
+    font-weight: var(--fes-text-font-weight-dark);
+    line-height: var(--fes-text-line-height-xl);
+    letter-spacing: var(--fes-text-letter-spacing-1);
+
+    @include media("<notebook") {
+      font-size: var(--fes-text-font-size-xxl-mo);
+    }
+  }
+
+  &[data-fes-text-variant="heading-3"] {
+    font-family: var(--fes-text-font-family-mainset);
+    font-size: var(--fes-text-font-size-xl);
+    font-weight: var(--fes-text-font-weight-ut-bold);
+    line-height: var(--fes-text-line-height-lg);
+    letter-spacing: var(--fes-text-letter-spacing-2);
+  }
+
+  &[data-fes-text-variant="subheading-1/button-text"] {
+    font-family: var(--fes-text-font-family-mainset);
+    font-size: var(--fes-text-font-size-md);
+    font-weight: var(--fes-text-font-weight-xt-bold);
+    line-height: var(--fes-text-line-height-sm);
+    letter-spacing: var(--fes-text-letter-spacing-2);
+  }
+
+  &[data-fes-text-variant="heading-link"] {
+    font-family: var(--fes-text-font-family-mainset);
+    font-size: var(--fes-text-font-size-rg);
+    font-weight: var(--fes-text-font-weight-book);
+    line-height: var(--fes-text-line-height-md);
+    letter-spacing: var(--fes-text-letter-spacing-2);
+  }
+
+  &[data-fes-text-variant="subheading-2"] {
+    font-family: var(--fes-text-font-family-mainset);
+    font-size: var(--fes-text-font-size-lg);
+    font-weight: var(--fes-text-font-weight-ut-bold);
+    line-height: var(--fes-text-line-height-lg);
+    letter-spacing: var(--fes-text-letter-spacing-2);
+  }
+
+  &[data-fes-text-variant="paragraph"] {
+    font-family: var(--fes-text-font-family-mainset);
+    font-size: var(--fes-text-font-size-md);
+    font-weight: var(--fes-text-font-weight-regular);
+    line-height: var(--fes-text-line-height-md);
+    letter-spacing: var(--fes-text-letter-spacing-2);
+  }
+
+  &[data-fes-text-variant="paragraph-bold"] {
+    font-family: var(--fes-text-font-family-mainset);
+    font-size: var(--fes-text-font-size-md);
+    font-weight: var(--fes-text-font-weight-ut-bold);
+    line-height: var(--fes-text-line-height-md);
+    letter-spacing: var(--fes-text-letter-spacing-2);
+  }
+
+  &[data-fes-text-variant="caption-g"] {
+    font-family: var(--fes-text-font-family-mainset);
+    font-size: var(--fes-text-font-size-sm);
+    font-weight: var(--fes-text-font-weight-regular);
+    line-height: var(--fes-text-line-height-sm);
+    letter-spacing: var(--fes-text-letter-spacing-2);
+  }
+
+  &[data-fes-text-variant="caption-m"] {
+    font-family: var(--fes-text-font-family-mainset);
+    font-size: var(--fes-text-font-size-xs);
+    font-weight: var(--fes-text-font-weight-regular);
+    line-height: var(--fes-text-line-height-sm);
+    letter-spacing: var(--fes-text-letter-spacing-2);
+  }
+
+  &[data-fes-text-variant="caption-p"] {
+    font-family: var(--fes-text-font-family-mainset);
+    font-size: var(--fes-text-font-size-xxs);
+    font-weight: var(--fes-text-font-weight-book);
+    line-height: var(--fes-text-line-height-sm);
+    letter-spacing: var(--fes-text-letter-spacing-2);
+  }
+
+  &[data-fes-text-uppercased="true"] {
+    text-transform: uppercase;
+  }
+
+  &[data-fes-text-spaced="true"] {
+    letter-spacing: var(--fes-text-letter-spacing-3);
+  }
+
+  &[data-fes-text-bold="true"] {
+    font-weight: var(--fes-text-font-weight-xt-bold);
+  }
+}
